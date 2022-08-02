@@ -32,9 +32,6 @@ async function getTopRatedFilms() {
     propOfFilm.push(voteCount);
     propOfFilm.push(blob);
 
-    console.log(blob);
-    console.log(json.results);
-
     return propOfFilm;
 }
 
