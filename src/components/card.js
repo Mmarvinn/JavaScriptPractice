@@ -1,4 +1,4 @@
-// 'use strict';
+'use strict';
 
 import {getTopRatedFilms} from '../services/api.js';
 

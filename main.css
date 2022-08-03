@@ -16,3 +16,18 @@
     height: 75px;
     overflow: hidden;
 }
+
+footer {
+    background-color: rgba(71, 69, 66, 0.5);
+    position: fixed;
+    bottom: 0px;
+    padding: 30px;
+    left: 0px;
+    width: 100%;
+}
+
+header {
+    width: 100%;
+    background-color: rgba(71, 69, 66, 0.5);
+    height: 50px;
+}
