@@ -1,8 +1,9 @@
 'use strict';
 
 // import {getTopRatedFilms} from '../src/services/api.js';
+// import {cardLists} from './pages/pageLists.js';
 
-function createLayout(content) {
+function renderPageLayout() {
     let header = document.createElement('header');
     let main = document.createElement('main');
     let footer = document.createElement('footer');
@@ -12,14 +13,18 @@ function createLayout(content) {
     let headerA = document.createElement('a');
     let headerImg = document.createElement('img');
 
-    for (let i = 0; i < 20; i++) {
+ /*    for (let i = 0; i < 20; i++) {
+        main.style.cssText = 'display: grid; grid-template-columns: repeat(auto-fill, minmax(270px, 1fr)); grid-row-gap: 50px; justify-items: center;';
 
         let cardDiv = document.createElement('div');
         let cardDivImg = document.createElement('img');
         let cardDivMovieName = document.createElement('h3');
         let cardDivMovieOverview = document.createElement('p');
 
-        cardDiv.className = 'card';
+        cardDiv.classList = 'card';
+        cardDivImg.classList = 'card_img';
+        cardDivMovieName.classList = 'card_movie_name';
+        cardDivMovieOverview.classList = 'card_movie_overview';
 
         // cardDivImg.src = `${content[7]}`;
         // cardDivMovieName.textContent = `${content[0]}`;
@@ -33,12 +38,15 @@ function createLayout(content) {
         cardDiv.append(cardDivImg);
         cardDiv.append(cardDivMovieName);
         cardDiv.append(cardDivMovieOverview);
-    }
+    } */
 
     headerA.textContent = 'HOME';
+    headerA.classList = 'button_home';
     footerSpan.textContent = 'Copyright © 2022, All Right Not Reserved';
+    footerSpan.classList = 'footer_copyright';
     footerSecSpan.textContent = 'Mmarvinn and a Co., Ltd';
     headerImg.src = '../images/logo.svg';
+    headerImg.classList = 'logo';
     headerA.href = 'http://127.0.0.1:5555/index.html';
 
     header.append(headerImg);
@@ -49,6 +57,7 @@ function createLayout(content) {
     document.body.prepend(footer);
     document.body.prepend(main);
     document.body.prepend(header);
+    
 }
 
-createLayout();
+renderPageLayout();
