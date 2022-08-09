@@ -14,7 +14,7 @@ footer {
     justify-content: space-around;
 }
 
-.footer_copyright {
+.footer__copyright {
     display: inline-block;
 }
 
@@ -43,8 +43,8 @@ header {
 }
 
 .card {
-    /* width: 300px; */
-    /* height: 550px; */
+    width: 230px;
+    height: 550px;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
@@ -53,19 +53,20 @@ header {
     border-radius: 10px;
     margin: 15px;
     border: 1px solid rgb(207, 207, 207);
+    transition: width, height, 0.5s;
 }
 
-.card_img {
+.card--img {
     width: 100%;
 }
 
-.card_movie_name {
+.card--movie-name {
     font-family: 'Fredoka One', cursive;
     margin: 0;
     padding: 15px;
 }
 
-.card_movie_overview {
+.card--movie-overview {
     font-family: 'Fredoka One', cursive;
     margin: 0 0 20px 0;
     padding: 0 25px 25px 25px;
