@@ -1,6 +1,10 @@
 'use strict';
 
-export function createMovieCard() {
+import {getTopRatedFilms} from '../services/api.js';
+
+const BASEIMGURL = 'http://image.tmdb.org/t/p/original';
+
+export function createMovieCard(posterOfFilm, filmName, filmOverview) {
 
     let cardDiv = document.createElement('div');
     let cardDivImg = document.createElement('img');
@@ -12,9 +16,9 @@ export function createMovieCard() {
     cardDivMovieName.classList = 'card--movie-name mg-0';
     cardDivMovieOverview.className = 'card--movie-overview';
 
-    cardDivImg.src = '../images/thor.jpg';
-    cardDivMovieName.textContent = 'Тор: Любов і грім';
-    cardDivMovieOverview.textContent = 'У новому фільмі «Тор: Любов і грім» від Marvel Studios Бог грому вирушає на пошуки внутрішнього спокою. Проте галактичний убивця Ґорр, знаний як Убивця богів, прагне знищити усіх небожителів та перериває вихід Тора на пенсію. Щоб подолати загрозу, Бог грому звертається по допомогу до королеви Валькірії, Корґа та своєї колишньої дівчини Джейн Фостер. Остання, на подив Тора, тепер володіє його магічним молотом Мйолніром так само, як і Могутній Тор. Разом вони вирушають у жахливу космічну пригоду, щоб розкрити таємницю помсти Убивці богів і зупинити його, поки не стало надто пізно.';
+    cardDivImg.src = `${BASEIMGURL}${posterOfFilm}`;
+    cardDivMovieName.textContent = filmName;
+    cardDivMovieOverview.textContent = filmOverview;
 
     cardDiv.append(cardDivImg);
     cardDiv.append(cardDivMovieName);
