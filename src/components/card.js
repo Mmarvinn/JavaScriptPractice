@@ -60,5 +60,11 @@ export function createMovieCard() {
     cardDiv.append(cardDivMovieName);
     cardDiv.append(cardDivMovieOverview);
 
+    cardDiv.addEventListener('click', whenClick);
+
     return cardDiv;
 };
+
+function whenClick() {
+    window.location.hash = "#film/";
+}

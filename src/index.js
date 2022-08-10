@@ -3,21 +3,25 @@
 import {createMovieList} from './pages/movieList.js';
 import {createMovieInfo} from './pages/movieDetailing.js';
 
-// createMovieList();
-
-// window.onpopstate = (event) => {
-//     console.log(`location: ${document.location}, state: ${JSON.stringify(event.state)}`);
-// };
-
-function app() {
+function routing() {
     console.log(location);
 
-    switch(location.pathname) {
-        case '/':
+    const main = document.querySelector('main');
+    const footer = document.querySelector('footer');
+    const header = document.querySelector('header');
+
+    if (main) {
+        main.remove();
+        footer.remove();
+        header.remove();
+    }
+
+    switch(location.hash) {
+        case '':
             createMovieList();
             break;
 
-        case '/film':
+        case '#film/':
             createMovieInfo();
             break;
 
@@ -26,8 +30,6 @@ function app() {
     }
 }
 
-app();
+routing();
 
-window.addEventListener('popstate', (event) => {
-    console.log(`location: ${document.location}, state: ${JSON.stringify(event.state)}`);
-});
+window.addEventListener('popstate', routing);

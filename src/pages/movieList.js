@@ -1,16 +1,17 @@
 'use strict';
 
+import {createMovieCard} from '../components/card.js';
 import {renderPageLayout} from '../layouts/createLayout.js';
 
 export function createMovieList() {
-    const button = document.createElement('button');
+    const arrayWithCards = [];
 
-    button.textContent = "click";
+    for (let i = 0; i < 20; i++) {
+        arrayWithCards.push(createMovieCard());
+    }
 
-    button.onclick = () => {
-        history.pushState({page:1}, 'title', `/film`);
-    };
+    renderPageLayout(arrayWithCards);
 
-    renderPageLayout(button);
-    // return button;
+    const main = document.querySelector('main');
+    main.className = 'main--movie-list';
 }
