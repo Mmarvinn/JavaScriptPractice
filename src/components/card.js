@@ -2,7 +2,7 @@
 
 import {getTopRatedFilms} from '../services/api.js';
 
-const BASEIMGURL = 'http://image.tmdb.org/t/p/original';
+const BASE_IMG_URL = 'http://image.tmdb.org/t/p/original';
 
 export function createMovieCard(posterOfFilm, filmName, filmOverview) {
 
@@ -16,7 +16,7 @@ export function createMovieCard(posterOfFilm, filmName, filmOverview) {
     cardDivMovieName.classList = 'card--movie-name mg-0';
     cardDivMovieOverview.className = 'card--movie-overview';
 
-    cardDivImg.src = `${BASEIMGURL}${posterOfFilm}`;
+    cardDivImg.src = `${BASE_IMG_URL}${posterOfFilm}`;
     cardDivMovieName.textContent = filmName;
     cardDivMovieOverview.textContent = filmOverview;
 
