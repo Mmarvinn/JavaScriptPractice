@@ -11,8 +11,8 @@ export function createMovieInfo() {
     const footer = document.querySelector('footer');
     const main = document.querySelector('main');
     main.className = 'main--movie-info';
-    header.className = 'header__movie-detail';
-    footer.className = 'footer__movie-detail';
+    header.className = 'mg-0';
+    footer.className = 'mg-0';
 }
 
 

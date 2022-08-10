@@ -1,17 +1,5 @@
 'use strict';
 
-/* import {getTopRatedFilms} from '../services/api.js';
-
-getTopRatedFilms().then(result => {
-
-    console.log(result);
-    // filmImg.src = `http://image.tmdb.org/t/p/original${result[7]}`;
-    // pFilmName.textContent = result[0];
-    // pFilmOverview.textContent = result[1];
-
-}); */
-
-
 export function createMovieCard() {
 
     let cardDiv = document.createElement('div');
@@ -21,12 +9,8 @@ export function createMovieCard() {
 
     cardDiv.className = 'card';
     cardDivImg.className = 'card--img';
-    cardDivMovieName.className = 'card--movie-name';
+    cardDivMovieName.classList = 'card--movie-name mg-0';
     cardDivMovieOverview.className = 'card--movie-overview';
-
-    // cardDivImg.src = `${content[7]}`;
-    // cardDivMovieName.textContent = `${content[0]}`;
-    // cardDivMovieOverview.textContent = `${content[1]}`;
 
     cardDivImg.src = '../images/thor.jpg';
     cardDivMovieName.textContent = 'Тор: Любов і грім';

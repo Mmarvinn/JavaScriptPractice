@@ -1,12 +1,22 @@
 'use strict';
 
+const clearBody = () => {
+    const childNodes = [...document.body.childNodes];
+    
+    childNodes.forEach((node) => {
+      if (node.tagName !== "SCRIPT") {
+        node.remove();
+      }
+    });
+};
+
 function createHeader() {
     const header = document.createElement('header');
     const headerLink = document.createElement('a');
     const headerImg = document.createElement('img');
 
     headerLink.textContent = 'HOME';
-    headerLink.className = 'button_home';
+    headerLink.className = 'button-home';
     headerImg.src = '../images/logo.svg';
     headerImg.className = 'logo';
     headerLink.href = 'http://127.0.0.1:5555/index.html';
@@ -22,7 +32,7 @@ function createFooter() {
     const footerSecSpan = document.createElement('span');
 
     footerSpan.textContent = 'Copyright © 2022, All Right Not Reserved';
-    footerSpan.className = 'footer__copyright';
+    footerSpan.className = 'footer--copyright';
     footerSecSpan.textContent = 'Mmarvinn and a Co., Ltd';
 
     footer.append(footerSpan);
@@ -32,6 +42,7 @@ function createFooter() {
 }
 
 export function renderPageLayout(node) {
+    clearBody();
     const header = createHeader();
     const footer = createFooter();
     const main = document.createElement('main');

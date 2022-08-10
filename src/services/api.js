@@ -9,8 +9,6 @@ export async function getTopRatedFilms() {
     let response = await fetch(`${BASEURL}/movie/popular?api_key=${APIKEY}&language=en-US&page=1`);
     let json = await response.json();
 
-    console.log(json);
-
     let propOfFilm = [];
 
     for (let i = 0; i < json.results.length; i++) {
