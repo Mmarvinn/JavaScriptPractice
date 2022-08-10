@@ -24,11 +24,11 @@ export function createMovieCard(posterOfFilm, filmName, filmOverview) {
     cardDiv.append(cardDivMovieName);
     cardDiv.append(cardDivMovieOverview);
 
-    cardDiv.addEventListener('click', whenClick);
+    cardDiv.addEventListener('click', onClick);
 
     return cardDiv;
 };
 
-function whenClick() {
+function onClick() {
     window.location.hash = "#film/";
 }
