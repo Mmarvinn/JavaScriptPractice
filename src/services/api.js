@@ -1,12 +1,12 @@
 'use strict';
 
-const BASEURL = 'https://api.themoviedb.org/3';
-const BASEIMGURL = 'http://image.tmdb.org/t/p/';
-const APIKEY = '1be31873de9aa764d36bafbd53752fba';
+const BASE_URL = 'https://api.themoviedb.org/3';
+const BASE_IMG_URL = 'http://image.tmdb.org/t/p/';
+const API_KEY = '1be31873de9aa764d36bafbd53752fba';
 
 export async function getTopRatedFilms() {
 
-    let response = await fetch(`${BASEURL}/movie/popular?api_key=${APIKEY}&language=en-US&page=1`);
+    let response = await fetch(`${BASE_URL}/movie/popular?api_key=${API_KEY}&language=en-US&page=1`);
     let json = await response.json();
 
     let propOfFilm = [];
