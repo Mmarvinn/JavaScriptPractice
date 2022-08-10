@@ -3,6 +3,20 @@
 import {renderPageLayout} from '../layouts/createLayout.js';
 
 export function createMovieInfo() {
+    const movieDetailBlock = createStructurePageMovieDetailing();
+ 
+    renderPageLayout(movieDetailBlock);
+
+    const header = document.querySelector('header');
+    const footer = document.querySelector('footer');
+    const main = document.querySelector('main');
+    main.className = 'main--movie-info';
+    header.className = 'header__movie-detail';
+    footer.className = 'footer__movie-detail';
+}
+
+
+function createStructurePageMovieDetailing() {
     const movieContainer = document.createElement('div');
     const movieImg = document.createElement('img');
     const movieContent = document.createElement('div');
@@ -21,38 +35,32 @@ export function createMovieInfo() {
     const description = document.createElement('p');
 
     movieContainer.append(movieImg);
-    movieImg.src = '../images/thor.jpg';
     movieContainer.append(movieContent);
     movieContent.append(title);
-    title.textContent = 'Тор: Любов і грім';
     title.append(releaseDate);
-    releaseDate.textContent = '(2022)';
     movieContent.append(aboutMovieOptions);
     aboutMovieOptions.append(fullReleaseDate);
-    fullReleaseDate.textContent = '06/07/2022 ';
     aboutMovieOptions.append(movieGenge);
-    movieGenge.textContent = 'Бойовик, Пригоди, Фентезі ';
     aboutMovieOptions.append(movieDuration);
-    movieDuration.textContent = '1h 59m';
     movieContent.append(rating);
     rating.append(ratingIconWrapper);
     ratingIconWrapper.append(ratingIcon);
-    ratingIcon.src = './images/icon.png';
     ratingIconWrapper.append(ratingPercentage);
-    ratingPercentage.textContent = '62.36%';
     rating.append(ratingText);
-    ratingText.textContent = 'Rating of Users';
     movieContent.append(aboveDescription);
-    aboveDescription.textContent = 'Description';
     movieContent.append(description);
+
+    movieImg.src = '../images/thor.jpg';
+    title.textContent = 'Тор: Любов і грім';
+    releaseDate.textContent = '(2022)';
+    fullReleaseDate.textContent = '06/07/2022 ';
+    movieGenge.textContent = 'Бойовик, Пригоди, Фентезі ';
+    movieDuration.textContent = '1h 59m';
+    ratingIcon.src = './images/icon.png';
+    ratingPercentage.textContent = '62.36%';
+    ratingText.textContent = 'Rating of Users';
+    aboveDescription.textContent = 'Description';
     description.textContent = 'У новому фільмі «Тор: Любов і грім» від Marvel Studios Бог грому вирушає на пошуки внутрішнього спокою. Проте галактичний убивця Ґорр, знаний як Убивця богів, прагне знищити усіх небожителів та перериває вихід Тора на пенсію. Щоб подолати загрозу, Бог грому звертається по допомогу до королеви Валькірії, Корґа та своєї колишньої дівчини Джейн Фостер. Остання, на подив Тора, тепер володіє його магічним молотом Мйолніром так само, як і Могутній Тор. Разом вони вирушають у жахливу космічну пригоду, щоб розкрити таємницю помсти Убивці богів і зупинити його, поки не стало надто пізно.';
 
-    renderPageLayout(movieContainer);
-
-    const header = document.querySelector('header');
-    const footer = document.querySelector('footer');
-    const main = document.querySelector('main');
-    main.className = 'main--movie-info';
-    header.className = 'header__movie-detail';
-    footer.className = 'footer__movie-detail';
+    return movieContainer;
 }
