@@ -17,7 +17,6 @@ export function createMovieList() {
             }));
         });
 
-        const mainClassName = 'main--movie-list';
-        renderPageLayout(arrayWithCards, mainClassName);
+        renderPageLayout(arrayWithCards, 'main--movie-list');
     });
 }
