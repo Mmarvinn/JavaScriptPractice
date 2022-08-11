@@ -7,19 +7,31 @@ import {getTopRatedFilms} from '../services/api.js';
 export function createMovieList() {
     const arrayWithCards = [];
 
-    getTopRatedFilms().then(result => {
-        
-        result.results.forEach(element => {
-            const movieInfo = {};
+    getTopRatedFilms().then(onFullFilled, onRejected);
+    
+    function onFullFilled(result) {
+        console.log(result);
+        if (result?.results) {
 
-            movieInfo.posterOfFilm = element.poster_path;
-            movieInfo.filmName = element.original_title;
-            movieInfo.filmOverview = element.overview;
+            result.results.forEach(element => {
+                const movieInfo = {};
 
-            arrayWithCards.push(createMovieCard(movieInfo));
-        });
+                movieInfo.posterOfFilm = element.poster_path;
+                movieInfo.filmName = element.original_title;
+                movieInfo.filmOverview = element.overview;
 
-        const mainClassName = 'main--movie-list';
-        renderPageLayout(arrayWithCards, mainClassName);
-    });
+                arrayWithCards.push(createMovieCard(movieInfo));
+            });
+
+            const mainClassName = 'main--movie-list';
+            renderPageLayout(arrayWithCards, mainClassName);
+
+        } else {
+            onRejected();
+        }
+    };
+
+    function onRejected() {
+        console.log('error');
+    }
 }
