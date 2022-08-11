@@ -5,10 +5,14 @@ import {renderPageLayout} from '../layouts/createLayout.js';
 import {getTopRatedFilms} from '../services/api.js';
 
 export function createMovieList() {
-    const arrayWithCards = [];
+    getTopRatedFilms().then(onFullFilled, onRejected);  
+}
 
-    getTopRatedFilms().then(data => {
+function onFullFilled(data) {
+    const arrayWithCards = [];
         
+    if (data?.results) {
+
         data.results.forEach(element => {
             arrayWithCards.push(createMovieCard({
                 posterOfFilm: element.poster_path,
@@ -18,5 +22,16 @@ export function createMovieList() {
         });
 
         renderPageLayout(arrayWithCards, 'main--movie-list');
-    });
+
+    } else {
+        onRejected(data.status_message);
+    }
+}
+
+function onRejected(error) {
+    const errorDiv = document.createElement('div');
+
+    document.body.prepend(errorDiv);
+    errorDiv.textContent = `Error: ${error}`;
+    errorDiv.className = 'error-div';
 }
