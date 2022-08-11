@@ -8,19 +8,18 @@ export function createMovieList() {
     const arrayWithCards = [];
 
     getTopRatedFilms().then(result => {
+        
+        result.results.forEach(element => {
+            const movieInfo = {};
 
-        for (let i = 0; i < result.length; i++) {
-            const oneFilm = result[i];
-            const posterOfFilm = oneFilm[0];
-            const filmName = oneFilm[1];
-            const filmOverview = oneFilm[2];
+            movieInfo.posterOfFilm = element.poster_path;
+            movieInfo.filmName = element.original_title;
+            movieInfo.filmOverview = element.overview;
 
-            arrayWithCards.push(createMovieCard(posterOfFilm, filmName, filmOverview));
-        }
-    
-            renderPageLayout(arrayWithCards);
+            arrayWithCards.push(createMovieCard(movieInfo));
+        });
 
-        const main = document.querySelector('main');
-        main.className = 'main--movie-list';
+        const mainClassName = 'main--movie-list';
+        renderPageLayout(arrayWithCards, mainClassName);
     });
 }

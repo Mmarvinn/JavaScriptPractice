@@ -19,7 +19,7 @@ function createHeader() {
     headerLink.className = 'button-home';
     headerImg.src = '../images/logo.svg';
     headerImg.className = 'logo';
-    headerLink.href = 'http://127.0.0.1:5555/index.html';
+    headerLink.href = '#';
     header.append(headerImg);
     header.append(headerLink);
 
@@ -41,11 +41,12 @@ function createFooter() {
     return footer;
 }
 
-export function renderPageLayout(node) {
+export function renderPageLayout(node, mainClassName) {
     clearBody();
     const header = createHeader();
     const footer = createFooter();
     const main = document.createElement('main');
+    main.className = mainClassName;
     
     if (node?.length) {
         for (let n of node) {
