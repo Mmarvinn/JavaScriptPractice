@@ -7,16 +7,14 @@ import {getTopRatedFilms} from '../services/api.js';
 export function createMovieList() {
     const arrayWithCards = [];
 
-    getTopRatedFilms().then(result => {
+    getTopRatedFilms().then(data => {
         
-        result.results.forEach(element => {
-            const movieInfo = {};
-
-            movieInfo.posterOfFilm = element.poster_path;
-            movieInfo.filmName = element.original_title;
-            movieInfo.filmOverview = element.overview;
-
-            arrayWithCards.push(createMovieCard(movieInfo));
+        data.results.forEach(element => {
+            arrayWithCards.push(createMovieCard({
+                posterOfFilm: element.poster_path,
+                filmName: element.original_title,
+                filmOverview: element.overview,
+            }));
         });
 
         const mainClassName = 'main--movie-list';

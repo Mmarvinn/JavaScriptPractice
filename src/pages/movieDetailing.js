@@ -4,9 +4,8 @@ import {renderPageLayout} from '../layouts/createLayout.js';
 
 export function createMovieInfo() {
     const movieDetailBlock = createStructurePageMovieDetailing();
-    const mainClassName = 'main--movie-info';
-    
-    renderPageLayout(movieDetailBlock, mainClassName);
+
+    renderPageLayout(movieDetailBlock, 'main--movie-info');
 
     const header = document.querySelector('header');
     const footer = document.querySelector('footer');
