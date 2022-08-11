@@ -10,3 +10,5 @@ export async function getTopRatedFilms() {
 
     return json;
 }
+
+// .. універсальна функція щоб робити реквести на базі феча

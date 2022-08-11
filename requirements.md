@@ -59,16 +59,10 @@ You should create a [SPA](https://developer.mozilla.org/en-US/docs/Glossary/SPA)
    - display error in case this happens
    - display appropriate UI with details about the film
   
- 5. Add logic for displaying a list of cards - 
-   - display loading state
-   - display error in case this happens
-   - create function for render list of film cards (renderFilmCard)
-   - click on each card should push user to page with info about this film
-
- 6. Add api call to get one movie by id - 
+ 5. Add api call to get one movie by id - 
    - function should recive film id, and make api call for details info about tis film, and return this info
    
- 7. Add UI for page with info about one movie - 
+ 6. Add UI for page with info about one movie - 
    - on this page should be called function from point 6
    - display loading state
    - display error in case this happens
