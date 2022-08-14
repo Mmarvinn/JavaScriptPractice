@@ -1,37 +1,33 @@
 'use strict';
 
-import {createMovieCard} from '../components/card.js';
-import {renderPageLayout} from '../layouts/createLayout.js';
-import {getTopRatedFilms} from '../services/api.js';
+import { createMovieCard } from '../components/card.js';
+import { renderPageLayout } from '../layouts/createLayout.js';
+import { getTopRatedFilms } from '../services/api.js';
+import { displayError } from '../components/displayError.js';
+import { displayLoading } from '../components/displayLoading.js';
 
-export function createMovieList() {
-    getTopRatedFilms().then(onFullFilled, onRejected);  
-}
+export async function createMovieList() {
+    displayLoading();
 
-function onFullFilled(data) {
-    const arrayWithCards = [];
-        
-    if (data?.results) {
-
-        data.results.forEach(element => {
-            arrayWithCards.push(createMovieCard({
-                posterOfFilm: element.poster_path,
-                filmName: element.original_title,
-                filmOverview: element.overview,
-            }));
-        });
-
-        renderPageLayout(arrayWithCards, 'main--movie-list');
-
-    } else {
-        onRejected(data.status_message);
+    try {
+        const info = await getTopRatedFilms();
+        showMovieList(info);
+    } catch(error) {
+        displayError(error);
     }
 }
 
-function onRejected(error) {
-    const errorDiv = document.createElement('div');
+function showMovieList(data) {
+    const arrayWithCards = [];
 
-    document.body.prepend(errorDiv);
-    errorDiv.textContent = `Error: ${error}`;
-    errorDiv.className = 'error-div';
+    data.results.forEach(element => {
+        arrayWithCards.push(createMovieCard({
+            posterOfFilm: element.poster_path,
+            filmName: element.original_title,
+            filmOverview: element.overview,
+            filmId: element.id,
+        }));
+    });
+
+    renderPageLayout(arrayWithCards, 'main--movie-list');
 }

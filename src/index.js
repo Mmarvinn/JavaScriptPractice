@@ -1,17 +1,19 @@
 'use strict';
 
-import {createMovieList} from './pages/movieList.js';
-import {createMovieInfo} from './pages/movieDetailing.js';
+import { createMovieList } from './pages/movieList.js';
+import { createMovieInfo } from './pages/movieDetailing.js';
+import { getFilmId } from './services/getFilmId.js';
 
-function routing() {
+export function routing() {
+    let filmId = getFilmId();
 
     switch(location.hash) {
         case '':
             createMovieList();
             break;
 
-        case '#film/':
-            createMovieInfo();
+        case `#film/${filmId}`:
+            createMovieInfo(filmId);
             break;
 
         default:

@@ -1,16 +1,8 @@
 'use strict';
 
-const clearBody = () => {
-    const childNodes = [...document.body.childNodes];
-    
-    childNodes.forEach((node) => {
-      if (node.tagName !== "SCRIPT") {
-        node.remove();
-      }
-    });
-};
+import { clearBody } from "../components/clearBody.js";
 
-function createHeader() {
+export function createHeader() {
     const header = document.createElement('header');
     const headerLink = document.createElement('a');
     const headerImg = document.createElement('img');
@@ -26,7 +18,7 @@ function createHeader() {
     return header;
 }
 
-function createFooter() {
+export function createFooter() {
     const footer = document.createElement('footer');
     const footerSpan = document.createElement('span');
     const footerSecSpan = document.createElement('span');

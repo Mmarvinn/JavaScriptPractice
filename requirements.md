@@ -63,7 +63,7 @@ You should create a [SPA](https://developer.mozilla.org/en-US/docs/Glossary/SPA)
    - function should recive film id, and make api call for details info about tis film, and return this info
    
  6. Add UI for page with info about one movie - 
-   - on this page should be called function from point 6
+   - on this page should be called function from point 5
    - display loading state
    - display error in case this happens
    - display appropriate UI with details about the film

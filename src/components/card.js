@@ -1,8 +1,7 @@
 'use strict';
 
-import {getTopRatedFilms} from '../services/api.js';
+import { BASE_IMG_URL } from '../services/api.js';
 
-const BASE_IMG_URL = 'http://image.tmdb.org/t/p/original';
 
 export function createMovieCard(obj) {
 
@@ -26,9 +25,10 @@ export function createMovieCard(obj) {
 
     cardDiv.addEventListener('click', onClick);
 
+    function onClick() {
+        window.location.hash = `#film/${obj.filmId}`;
+    }
+
     return cardDiv;
 };
 
-function onClick() {
-    window.location.hash = "#film/";
-}
