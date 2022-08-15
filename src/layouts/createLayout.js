@@ -1,6 +1,6 @@
 'use strict';
 
-import { clearBody } from "../components/clearBody.js";
+import { clearBody } from "../utility/clearBody.js";
 
 export function createHeader() {
     const header = document.createElement('header');

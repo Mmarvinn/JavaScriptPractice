@@ -24,7 +24,7 @@ function showMovieInfo(data) {
 
     const header = document.querySelector('header');
     const footer = document.querySelector('footer');
-    const ratedLine = document.querySelector('.movie-container--content--wrapper-rating--wrapper-rating-icon--rating-body__rating-line');
+    const ratedLine = document.querySelector('.rating-body__rating-line');
     
     header.className = 'mg-0';
     footer.className = 'mg-0';
@@ -46,7 +46,7 @@ function createStructurePageMovieDetailing(data) {
     const ratingIconWrapper = document.createElement('div');
     const ratingIconWrapperLine = document.createElement('div');
     const ratingBody = document.createElement('div');
-    const ratingPercentage = document.createElement('span');
+    const ratingLevel = document.createElement('span');
     const ratingText = document.createElement('span');
     const aboveDescription = document.createElement('h3');
     const description = document.createElement('p');
@@ -56,21 +56,21 @@ function createStructurePageMovieDetailing(data) {
     movieContainer.style.backgroundImage = `url("${BASE_IMG_URL}${data.backdrop_path}")`;
     movieContainer.className = 'movie-container';
     movieImg.className = 'movie-container--img';
-    movieContent.className = 'movie-container--content';
-    title.className = 'movie-container--content--title mg-10';
-    releaseYear.className = 'release-year';
-    aboutMovieOptions.className = 'movie-container--content--wrapper-about-movie mg-10';
-    fullReleaseDate.className = 'movie-container--content--wrapper-about-movie--release-date';
-    movieGenge.className = 'movie-container--content--wrapper-about-movie--movie-genre mg-left-10';
-    movieDuration.className = 'movie-container--content--wrapper-about-movie--movie-duration mg-left-10';
-    rating.className = 'movie-container--content--wrapper-rating mg-10';
-    ratingIconWrapper.className = 'movie-container--content--wrapper-rating--wrapper-rating-icon';
-    ratingBody.className = 'movie-container--content--wrapper-rating--wrapper-rating-icon--rating-body';
-    ratingIconWrapperLine.className = 'movie-container--content--wrapper-rating--wrapper-rating-icon--rating-body__rating-line';
-    ratingPercentage.className = 'movie-container--content--wrapper-rating--wrapper-rating-icon--rating-percentage mg-left-10';
-    ratingText.className = 'movie-container--content--wrapper-rating--rating-text';
-    aboveDescription.className = 'movie-container--content--above-description mg-10';
-    description.className = 'movie-container--content--description mg-10';
+    movieContent.className = 'content';
+    title.className = 'content--title mg-10';
+    releaseYear.className = 'content--release-year';
+    aboutMovieOptions.className = 'movie-options mg-10';
+    fullReleaseDate.className = 'movie-options--release-date';
+    movieGenge.className = 'movie-options--movie-genre mg-left-10';
+    movieDuration.className = 'movie-options--movie-duration mg-left-10';
+    rating.className = 'wrapper-rating mg-10';
+    ratingIconWrapper.className = 'rating';
+    ratingBody.className = 'rating-body';
+    ratingIconWrapperLine.className = 'rating-body__rating-line';
+    ratingLevel.className = 'rating--rating-level mg-left-10';
+    ratingText.className = 'wrapper-rating--rating-text';
+    aboveDescription.className = 'content--above-description mg-10';
+    description.className = 'content--description mg-10';
 
     movieImg.src = `${BASE_IMG_URL}${data.poster_path}`;
     title.textContent = `${data.original_title}`;
@@ -78,7 +78,7 @@ function createStructurePageMovieDetailing(data) {
     fullReleaseDate.textContent = `${data.release_date} `;
     movieGenge.textContent = genres;
     movieDuration.textContent = `${data.runtime} min`;
-    ratingPercentage.textContent = `${data.vote_average.toFixed(2)} of 10`;
+    ratingLevel.textContent = `${data.vote_average.toFixed(2)} of 10`;
     ratingText.textContent = 'Rating of Users';
     aboveDescription.textContent = 'Description';
     description.textContent = `${data.overview}`;
@@ -96,7 +96,7 @@ function createStructurePageMovieDetailing(data) {
     rating.append(ratingIconWrapper);
     ratingIconWrapper.append(ratingBody);
     ratingBody.append(ratingIconWrapperLine);
-    ratingIconWrapper.append(ratingPercentage);
+    ratingIconWrapper.append(ratingLevel);
     movieContent.append(aboveDescription);
     movieContent.append(description);
 
