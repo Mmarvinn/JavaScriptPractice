@@ -3,6 +3,7 @@ body {
     margin: 0px;
     box-sizing: border-box;
     overflow-x: hidden;
+    width: 99vw;
 }
 
 .mg-0 {
@@ -20,15 +21,20 @@ body {
 footer {
     background-color: black;
     color: white;
-    padding: 30px;
+    padding: 30px 20px;
     margin: 50px 0 0 0;
-    width: 100%;
+    width: auto;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
 }
 
 .footer--copyright {
     display: inline-block;
+}
+
+.footer__movie-detailing {
+    padding-left: 170px;
+    padding-right: 70px;
 }
 
 header {
@@ -36,8 +42,11 @@ header {
     background-color: black;
     display: flex;
     align-items: center;
-    padding: 0 50px;
     margin-bottom: 30px;
+}
+
+.header__movie-detailing {
+    padding-left: 160px;
 }
 
 .logo {
@@ -69,7 +78,7 @@ header {
 }
 
 .card:hover {
-    transform: scale(1.1);
+    transform: scale(1.04);
     cursor: pointer;
 }
 
@@ -93,9 +102,10 @@ header {
 
 .main--movie-list {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     grid-row-gap: 50px;
     justify-items: center;
+    /* margin: 0 auto; */
 }
 
 .main--movie-info {
@@ -104,6 +114,7 @@ header {
     min-height: calc(100vh - 278px);
     z-index: -2;
     color:aliceblue;
+    /* margin: 0 auto; */
 }
 
 .main--movie-info::before {
@@ -177,7 +188,7 @@ header {
     letter-spacing: -4px;
 }
 
-.rating-body__rating-line {
+.rating-body--rating-line {
     width: 0%;
     height: 100%;
     position: absolute;
@@ -185,7 +196,7 @@ header {
     left: 0;
 }
 
-.rating-body__rating-line::before {
+.rating-body--rating-line::before {
     width: 100%;
     height: 100%;
     content: "☆☆☆☆☆";

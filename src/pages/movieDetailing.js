@@ -24,10 +24,10 @@ function showMovieInfo(data) {
 
     const header = document.querySelector('header');
     const footer = document.querySelector('footer');
-    const ratedLine = document.querySelector('.rating-body__rating-line');
+    const ratedLine = document.querySelector('.rating-body--rating-line');
     
-    header.className = 'mg-0';
-    footer.className = 'mg-0';
+    header.className = 'header__movie-detailing mg-0';
+    footer.className = 'footer__movie-detailing mg-0';
     ratedLine.style.width = `${data.vote_average.toFixed(1) * 10}%`;
 }
 
@@ -66,11 +66,13 @@ function createStructurePageMovieDetailing(data) {
     rating.className = 'wrapper-rating mg-10';
     ratingIconWrapper.className = 'rating';
     ratingBody.className = 'rating-body';
-    ratingIconWrapperLine.className = 'rating-body__rating-line';
+    ratingIconWrapperLine.className = 'rating-body--rating-line';
     ratingLevel.className = 'rating--rating-level mg-left-10';
     ratingText.className = 'wrapper-rating--rating-text';
     aboveDescription.className = 'content--above-description mg-10';
     description.className = 'content--description mg-10';
+
+    movieImg.setAttribute('alt', 'Movie title image');
 
     movieImg.src = `${BASE_IMG_URL}${data.poster_path}`;
     title.textContent = `${data.original_title}`;
