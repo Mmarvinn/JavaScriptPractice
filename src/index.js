@@ -2,7 +2,7 @@
 
 import { createMovieList } from './pages/movieList.js';
 import { createMovieInfo } from './pages/movieDetailing.js';
-import { getFilmId } from './services/getFilmId.js';
+import { getFilmId } from './utils/getFilmId.js';
 
 export function routing() {
     let filmId = getFilmId();
