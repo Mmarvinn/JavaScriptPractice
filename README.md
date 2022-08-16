@@ -6,8 +6,7 @@
 
 Hello everybody. I learn Front-End development. I learned foundations of HTML, CSS and JS.
 This project is a practical task to consolidate my knowledge on the studied material.
-This task was designed by my friend and Front-End developer [Taras Protsyshyn](https://github.com/TarasProtsyshyn) thx him.
-Application has no `HTML` only `JavaScript` and `CSS` for stylization. 
+This is my attempt to implement basic functionality on SPA to understand the working principle and construction of SPA.
 
 ---
 
