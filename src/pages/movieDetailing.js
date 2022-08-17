@@ -26,8 +26,8 @@ function showMovieInfo(data) {
     const footer = document.querySelector('footer');
     const ratedLine = document.querySelector('.rating-body--rating-line');
     
-    header.className = 'header__movie-detailing mg-0';
-    footer.className = 'footer__movie-detailing mg-0';
+    header.className = 'mg-0';
+    footer.className = 'mg-0';
     ratedLine.style.width = `${data.vote_average.toFixed(1) * 10}%`;
 }
 

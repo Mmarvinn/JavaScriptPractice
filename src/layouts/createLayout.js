@@ -6,13 +6,16 @@ export function createHeader() {
     const header = document.createElement('header');
     const headerLink = document.createElement('a');
     const headerImg = document.createElement('img');
+    const imgLink = document.createElement('a');
 
     headerLink.textContent = 'HOME';
     headerLink.className = 'button-home';
     headerImg.src = '../../images/logo.svg';
     headerImg.className = 'logo';
     headerLink.href = '#';
-    header.append(headerImg);
+    imgLink.href = '#';
+    header.append(imgLink);
+    imgLink.append(headerImg);
     header.append(headerLink);
 
     return header;
