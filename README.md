@@ -8,6 +8,8 @@ Hello everybody. I learn Front-End development. I learned foundations of HTML, C
 This project is a practical task to consolidate my knowledge on the studied material.
 This is my attempt to implement basic functionality on SPA to understand the working principle and construction of SPA.
 
+[Here](https://mmarvinn.github.io/JavaScriptPractice/) URL to my SPA.
+
 ---
 
 ### How to use ?
