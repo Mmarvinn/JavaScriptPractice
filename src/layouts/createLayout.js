@@ -10,7 +10,7 @@ export function createHeader() {
 
     headerLink.textContent = 'HOME';
     headerLink.className = 'button-home';
-    headerImg.src = '../../images/logo.svg';
+    headerImg.src = 'https://mmarvinn.github.io/JavaScriptPractice/images/logo.svg';
     headerImg.className = 'logo';
     headerLink.href = '#';
     imgLink.href = '#';
