@@ -9,7 +9,7 @@ export function createHeader() {
 
     headerLink.textContent = 'HOME';
     headerLink.className = 'button-home';
-    headerImg.src = '../images/logo.svg';
+    headerImg.src = '../../images/logo.svg';
     headerImg.className = 'logo';
     headerLink.href = '#';
     header.append(headerImg);
