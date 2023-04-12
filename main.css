@@ -1,251 +1,255 @@
-
 body {
-    margin: 0px;
-    box-sizing: border-box;
-    overflow-x: hidden;
-    width: 100vw;
+  margin: 0px;
+  box-sizing: border-box;
+  overflow-x: hidden;
+  width: 100vw;
 }
 
 .mg-0 {
-    margin: 0;
+  margin: 0;
 }
 
 .mg-10 {
-    margin: 10px;
+  margin: 10px;
 }
 
 .mg-left-10 {
-    margin-left: 10px;
+  margin-left: 10px;
 }
 
 footer {
-    background-color: black;
-    color: white;
-    padding: 30px 115px;
-    margin: 50px 0 0 0;
-    width: auto;
-    display: flex;
-    justify-content: space-between;
+  background-color: black;
+  color: white;
+  padding: 30px 115px;
+  margin: 50px 0 0 0;
+  width: auto;
+  display: flex;
+  justify-content: space-between;
 }
 
 .footer--copyright {
-    display: inline-block;
+  display: inline-block;
 }
 
 header {
-    width: 100%;
-    background-color: black;
-    display: flex;
-    align-items: center;
-    margin-bottom: 30px;
-    padding: 0px 100px;
+  width: 100%;
+  background-color: black;
+  display: flex;
+  align-items: center;
+  margin-bottom: 30px;
+  padding: 0px 100px;
 }
 
 .logo {
-    width: 150px;
+  width: 150px;
 }
 
 .button-home {
-    color: white;
-    display: block;
-    text-decoration: none;
-    padding: 20px;
-    padding-left: 100px;
-    font-family: Arial Black;
-    letter-spacing: 5px;
-    font-size: 25px;
+  color: white;
+  display: block;
+  text-decoration: none;
+  padding: 20px;
+  padding-left: 100px;
+  font-family: Arial Black;
+  letter-spacing: 5px;
+  font-size: 25px;
 }
 
 .card {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    align-items: center;
-    align-content: flex-start;
-    overflow: hidden;
-    border-radius: 10px;
-    margin: 15px;
-    border: 1px solid rgb(207, 207, 207);
-    transition: width, height, 0.5s;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+  align-content: flex-start;
+  overflow: hidden;
+  border-radius: 10px;
+  margin: 15px;
+  border: 1px solid rgb(207, 207, 207);
+  transition: width, height, 0.5s;
 }
 
 .card:hover {
-    transform: scale(1.04);
-    cursor: pointer;
+  transform: scale(1.04);
+  cursor: pointer;
 }
 
 .card--img {
-    width: 100%;
+  width: 100%;
 }
 
 .card--movie-name {
-    font-family: 'Fredoka One', cursive;
-    padding: 15px;
-    letter-spacing: 1px;
+  font-family: 'Signika Negative', sans-serif;
+  padding: 15px;
+  letter-spacing: 1px;
+  font-weight: bold;
+  font-size: 25px;
+  text-align: center;
 }
 
 .card--movie-overview {
-    font-family: 'Fredoka One', cursive;
-    margin: 0 0 20px 0;
-    padding: 0 25px 25px 25px;
-    height: 115px;
-    overflow: hidden;
+  font-family: 'Signika Negative', sans-serif;
+  margin: 0 0 20px 0;
+  padding: 0 25px 25px 25px;
+  height: 115px;
+  overflow: hidden;
+  font-size: 117%;
+  letter-spacing: 0.7px;
 }
 
 .main--movie-list {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    grid-row-gap: 50px;
-    justify-items: center;
-    padding: 0px 100px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-row-gap: 50px;
+  justify-items: center;
+  padding: 0px 100px;
 }
 
 .main--movie-info {
-    display: block;
-    position: relative;
-    min-height: calc(100vh - 278px);
-    z-index: -2;
-    color:aliceblue;
+  display: block;
+  position: relative;
+  min-height: calc(100vh - 278px);
+  z-index: -2;
+  color: aliceblue;
 }
 
 .main--movie-info::before {
-    content: "";
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    background: linear-gradient(90deg, #000000, hsl(0deg 0% 0% / 65%))
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: linear-gradient(90deg, #000000, hsl(0deg 0% 0% / 65%));
 }
 
 .error-div {
-    margin: 39.8vh auto;
-    text-align: center;
-    font-size: 2rem;
+  margin: 39.8vh auto;
+  text-align: center;
+  font-size: 2rem;
 }
 
 .movie-container {
-    background-size: cover;
-    background-position: 50%;
-    align-items: center;
-    height: 83.6vh;
-    display: flex;
-    padding: 0px 100px;
+  background-size: cover;
+  background-position: 50%;
+  align-items: center;
+  height: 83.6vh;
+  display: flex;
+  padding: 0px 100px;
 }
 
 .movie-container--img {
-    z-index: 1;
-    width: auto;
-    height: 450px;
-    margin: 40px 40px 40px 15px;
+  z-index: 1;
+  width: auto;
+  height: 450px;
+  margin: 40px 40px 40px 15px;
 }
 
 .content {
-    z-index: 1;
-    font-size: 1.25rem;
-    font-family: cursive;
-    grid-column: span 3;
+  z-index: 1;
+  font-size: 1.25rem;
+  font-family: cursive;
+  grid-column: span 3;
 }
 
 .wrapper-rating {
-    margin-top: 30px;
-    margin-bottom: 30px;
+  margin-top: 30px;
+  margin-bottom: 30px;
 }
 
 .wrapper-rating--rating-text {
-    font-size: 1.5rem;
+  font-size: 1.5rem;
 }
 
 .rating {
-    display: flex;
-    align-items: center;
+  display: flex;
+  align-items: center;
 }
 
 .rating-body {
-    min-width: 150px;
-    height: 60px;
-    position: relative;
+  min-width: 150px;
+  height: 60px;
+  position: relative;
 }
 
 .rating-body::before {
-    width: 100%;
-    height: 100%;
-    content: "☆☆☆☆☆";
-    position: absolute;
-    top: 0;
-    left: 0;
-    font-size: 40px;
-    letter-spacing: -4px;
+  width: 100%;
+  height: 100%;
+  content: '☆☆☆☆☆';
+  position: absolute;
+  top: 0;
+  left: 0;
+  font-size: 40px;
+  letter-spacing: -4px;
 }
 
 .rating-body--rating-line {
-    width: 0%;
-    height: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
+  width: 0%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
 }
 
 .rating-body--rating-line::before {
-    width: 100%;
-    height: 100%;
-    content: "☆☆☆☆☆";
-    position: absolute;
-    top: 0;
-    left: 0;
-    font-size: 40px;
-    color: red;
-    overflow: hidden;
-    letter-spacing: -4px;
+  width: 100%;
+  height: 100%;
+  content: '☆☆☆☆☆';
+  position: absolute;
+  top: 0;
+  left: 0;
+  font-size: 40px;
+  color: red;
+  overflow: hidden;
+  letter-spacing: -4px;
 }
 
 .content--release-year {
-    margin-left: 20px;
+  margin-left: 20px;
 }
 
 .movie-options {
-    display: flex;
-    flex-wrap: nowrap;
+  display: flex;
+  flex-wrap: nowrap;
 }
 
 .movie-options--release-date,
 .movie-options--movie-genre,
 .movie-options--movie-duration {
-    display: list-item;
-    list-style-position: inside;
-    list-style-type: disclosure-closed;
+  display: list-item;
+  list-style-position: inside;
+  list-style-type: disclosure-closed;
 }
 
 .content--above-description {
-    font-size: 1.8rem;
+  font-size: 1.8rem;
 }
 
 .display-loading {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 75vh;
-    overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 75vh;
+  overflow: hidden;
 }
 
 .display-loading--loading-text {
-    font-size: 100px;
-    animation-duration: 1s;
-    animation-name: loading;
-    animation-duration: 0.5s;
-    animation-iteration-count: infinite;
-    animation-direction: normal;
-    animation-name: loading;
-    overflow: hidden;
-    animation-direction: alternate-reverse;
+  font-size: 100px;
+  animation-duration: 1s;
+  animation-name: loading;
+  animation-duration: 0.5s;
+  animation-iteration-count: infinite;
+  animation-direction: normal;
+  animation-name: loading;
+  overflow: hidden;
+  animation-direction: alternate-reverse;
 }
 
 @keyframes loading {
-    from {
-        font-size: 55px;
-    }
+  from {
+    font-size: 55px;
+  }
 
-    to {
-        font-size: 75px;
-    }
+  to {
+    font-size: 75px;
+  }
 }
